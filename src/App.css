@@ -1,53 +1,30 @@
 /* Other rules */
-.block {
+body {
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #000;
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: black;
+  font-family: "Exo", sans-serif;
+  text-decoration: none;
 }
+
 .container {
-  max-width: 1200px;
+  max-width: 1380px;
   min-height: 100vh;
+  background-color: #262626;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-
-.header {
-  background-color: crimson;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-}
-.hero {
-  background-color: lightblue;
-
-  width: 100%;
-  height: 305px;
-}
-.search {
-  width: 100%;
-  height: 300px;
-  flex: 1;
-}
-.card-game {
-  width: 200px;
-  height: 250px;
-  position: relative;
-  margin: 10px;
-}
-.card-game h2 {
-  color: beige;
-  position: absolute;
-}
-
-.card-game .card-img {
-  width: 200px;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 10px;
-}
+/*# sourceMappingURL=App.css.map */

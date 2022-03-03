@@ -1,0 +1,16 @@
+.paginate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 1380px;
+  margin: auto;
+  background-color: #262626;
+  .paginate {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    cursor: pointer;
+    color: aliceblue;
+  }
+}

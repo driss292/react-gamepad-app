@@ -1,3 +1,5 @@
+import "../SearchInput/searchInput.scss";
+
 const SearchInput = ({ search, setSearch }) => {
   return (
     <div>

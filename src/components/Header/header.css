@@ -1,0 +1,91 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1380px;
+  height: 75px;
+  background-color: #262626;
+  border-bottom: 2px solid #eb565b;
+  margin: 0 auto;
+}
+
+.header .logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 70px;
+  width: 300px;
+}
+
+.header .logo-container .logo {
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  margin: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header .logo-container h2 {
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-top: 17px;
+  color: white;
+}
+
+.header .connection-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 80px;
+  width: 550px;
+}
+
+.header .connection-container .collection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 250px;
+  color: white;
+}
+
+.header .connection-container .collection p {
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.header .connection-container .login-signup {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.header .connection-container .login-signup button {
+  width: 100px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=header.css.map */

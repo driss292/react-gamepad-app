@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 1380px;
+  height: 75px;
+  background-color: #262626;
+  border-bottom: 2px solid #eb565b;
+  margin: 0 auto;
+  .logo-container {
+    display: flex;
+    flex: 2;
+    height: 70px;
+    width: 300px;
+    .logo {
+      cursor: pointer;
+      height: 35px;
+      width: 35px;
+      margin: 20px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    h2 {
+      cursor: pointer;
+      font-size: 2.5rem;
+      margin-top: 17px;
+      color: white;
+    }
+  }
+  .connection-container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    height: 80px;
+    width: 550px;
+    .collection {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 250px;
+      color: white;
+      p {
+        cursor: pointer;
+        font-size: 1.4rem;
+      }
+    }
+    .login-signup {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      button {
+        width: 100px;
+        cursor: pointer;
+      }
+    }
+  }
+}

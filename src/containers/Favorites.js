@@ -1,8 +1,10 @@
+import "../scss/favorites.scss";
+
 const Favorites = () => {
   return (
-    <div>
+    <section>
       <h1>hello from Favorites</h1>
-    </div>
+    </section>
   );
 };
 

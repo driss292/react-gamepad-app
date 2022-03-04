@@ -17,8 +17,9 @@ import {
   faUser,
   faBookmark,
   faCommenting,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faUser, faBookmark, faCommenting);
+library.add(faUser, faBookmark, faCommenting, faSearch);
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("token") || null);
@@ -49,7 +50,10 @@ function App() {
         />
         <Route path="/login" element={<Login setConnected={setConnected} />} />
         <Route path="/collection" element={<Favorites />} />
-        <Route path="/game/:id" element={<Game />} />
+        <Route
+          path="/game/:slug"
+          element={<Game userToken={userToken} userId={userId} />}
+        />
         <Route path="/review" element={<Review />} />
       </Routes>
     </Router>

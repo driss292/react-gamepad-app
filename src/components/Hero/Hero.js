@@ -8,7 +8,14 @@ const Hero = ({ search, setSearch, gameData }) => {
       <div>
         <h1>Gamepad</h1>
         <SearchInput search={search} setSearch={setSearch} />
-        <p>Search {gameData.count} games</p>
+        {search ? (
+          <div>
+            <p className="title-search">Search for : "{search}"</p>
+            <p className="count">{gameData.count}</p>
+          </div>
+        ) : (
+          <p className="count">Search {gameData.count} games</p>
+        )}
       </div>
     </div>
   );

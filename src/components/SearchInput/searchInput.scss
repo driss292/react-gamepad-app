@@ -1,7 +1,19 @@
-input {
-  width: 90%;
-  margin: 15px;
-  height: 45px;
-  border-radius: 10px;
-  border: none;
+.search-container {
+  .input {
+    width: 90%;
+    margin: 15px;
+    height: 45px;
+    border-radius: 10px;
+
+    border: none;
+    padding-left: 10px;
+    position: relative;
+  }
+  .icon {
+    position: absolute;
+    color: #494646;
+    top: 245px;
+    right: 615px;
+    font-size: 1.5rem;
+  }
 }

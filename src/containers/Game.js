@@ -1,15 +1,19 @@
 import "../scss/game.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Game = ({ userToken, userId }) => {
-  const { slug } = useParams();
+  const params = useParams();
+  const { slug } = params;
+  const navigate = useNavigate();
   // console.log(slug);
 
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [gameSeriesData, setGameSeriesData] = useState();
+  const [reviewsData, setReviewsData] = useState();
+  const [favoritesData, setFavoritesData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,15 +23,88 @@ const Game = ({ userToken, userId }) => {
       const responseGameSeries = await axios.get(
         `https://api.rawg.io/api/games/${slug}/game-series?key=d1b2b07ae2794fbe8fbbd25bd05b8936`
       );
-      // console.log(response.data);
-      // console.log(responseGameSeries.data);
+      const responseReviews = await axios.post(
+        "http://localhost:3000/reviews",
+        {
+          slug,
+        }
+      );
+      const responseFavorites = await axios.get(
+        "http://localhost:3000/favorites",
+        {
+          headers: {
+            Authorization: `Bearer ${userToken}`,
+          },
+        }
+      );
 
       setData(response.data);
-      setIsLoading(false);
       setGameSeriesData(responseGameSeries.data);
+      console.log(responseFavorites.data);
+      // setFavoritesData(responseFavorites.data);
+      setReviewsData(responseReviews.data);
+      setIsLoading(false);
     };
     fetchData();
-  }, [slug]);
+  }, [slug, userToken]);
+
+  const verifReview = () => {
+    if (reviewsData) {
+      if (userId) {
+        for (let i = 0; i < reviewsData.length; i++) {
+          if (reviewsData[i].user.id === userId) {
+            return true;
+          }
+        }
+      }
+    }
+  };
+
+  const verifFavorite = () => {
+    if (favoritesData) {
+      for (let i = 0; i < favoritesData.favorite.length; i++) {
+        if (favoritesData.favorite[i].gameData.slug === slug) {
+          return true;
+        }
+      }
+    }
+  };
+
+  const handleReview = () => {
+    if (userToken) {
+      navigate("/review", { state: { gameData: data } });
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const handleFavorite = async () => {
+    if (userToken) {
+      if (!verifFavorite) {
+        try {
+          const response = await axios.post(
+            "http://localhost:3000/favorite/create",
+            { game: data },
+            {
+              headers: {
+                Authorization: `Bearer ${userToken}`,
+              },
+            }
+          );
+
+          if (response) {
+            alert("Added to your collection");
+          }
+        } catch (error) {
+          console.log("ERROR =====>", error.message);
+        }
+      } else {
+        console.log("ERROR 2");
+      }
+    } else {
+      navigate("/login");
+    }
+  };
 
   let platforms = "";
   let genres = "";
@@ -78,8 +155,24 @@ const Game = ({ userToken, userId }) => {
         </div>
         <div className="right">
           <div className="fav-review">
-            <div className="fav">FAV</div>
-            <div className="review">REVIEW</div>
+            <button
+              className="fav-btn"
+              onClick={() => {
+                handleFavorite();
+              }}
+            >
+              {verifFavorite()
+                ? "Added to your collection"
+                : "Add to your collection"}
+            </button>
+            <button
+              className="review-btn"
+              onClick={() => {
+                handleReview();
+              }}
+            >
+              {verifReview() ? "Review added" : "Add a review"}
+            </button>
           </div>
           <div className="description-container">
             <div className="description-up">
@@ -115,6 +208,52 @@ const Game = ({ userToken, userId }) => {
           </div>
         </div>
       </article>
+      <div className="games-like-container">
+        <div className="title-game">
+          <h2>Games like {data.name}</h2>
+        </div>
+        <div className="games-like">
+          {gameSeriesData &&
+            gameSeriesData.results.map((elem, index) => {
+              return (
+                <div
+                  className="games-list"
+                  key={index}
+                  onClick={() => {
+                    navigate(`/game/${elem.slug}`);
+                  }}
+                >
+                  <img
+                    className="card-img"
+                    src={elem.background_image}
+                    alt={elem.name}
+                  />
+                  <div className="game-title">
+                    <h4>{elem.name}</h4>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      <div className="reviews">
+        <div className="title">
+          <h2>Review</h2>
+        </div>
+        <div className="list">
+          {reviewsData &&
+            reviewsData.map((item, index) => {
+              <p>Most relevant reviews :</p>;
+              return (
+                <div key={index}>
+                  <p>{item.title}</p>
+                  <p>{item.text}</p>
+                  <p>{item._id}</p>
+                </div>
+              );
+            })}
+        </div>
+      </div>
     </>
   );
 };

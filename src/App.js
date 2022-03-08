@@ -49,12 +49,15 @@ function App() {
           element={<Signup setConnected={setConnected} />}
         />
         <Route path="/login" element={<Login setConnected={setConnected} />} />
-        <Route path="/collection" element={<Favorites />} />
+        <Route
+          path="/favorites"
+          element={<Favorites userToken={userToken} />}
+        />
         <Route
           path="/game/:slug"
           element={<Game userToken={userToken} userId={userId} />}
         />
-        <Route path="/review" element={<Review />} />
+        <Route path="/review" element={<Review userToken={userToken} />} />
       </Routes>
     </Router>
   );

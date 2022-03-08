@@ -50,6 +50,7 @@ const Home = () => {
     };
 
     fetchData();
+    window.scrollTo(0, 0);
   }, [search, page, genres, platforms]);
 
   return isLoading ? (
@@ -73,21 +74,17 @@ const Home = () => {
           setDisplayGenres={setDisplayGenres}
           genres={genres}
         />
+        {/* <Dropdown/> */}
       </div>
       <div className="container">
         <div className="title">
-          <div>
+          <div className="block">
             {platforms ? (
               <h2>{platforms.name}</h2>
-            ) : genres ? (
-              <h2>{genres.name}</h2>
-            ) : platforms && genres ? (
-              <h2>
-                {platforms.name} / {genres.name}
-              </h2>
             ) : (
               <h2>Most Relevance Games</h2>
             )}
+            {genres && <h2>/ {genres.name}</h2>}
           </div>
         </div>
         <div className="container-card">

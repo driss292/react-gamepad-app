@@ -23,9 +23,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding-left: 130px;
-    h2 {
-      color: white;
-      font-size: 2rem;
+    .block {
+      display: flex;
+      h2 {
+        display: flex;
+        color: white;
+        font-size: 2rem;
+      }
     }
   }
   .container-card {

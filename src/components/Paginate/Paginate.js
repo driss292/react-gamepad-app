@@ -3,7 +3,7 @@ import "../Paginate/paginate.scss";
 
 const Paginate = ({ setPage, numberOfPages }) => {
   const handlePageClick = (data) => {
-    console.log(data.selected);
+    // console.log(data.selected);
     setPage(data.selected + 1);
   };
 

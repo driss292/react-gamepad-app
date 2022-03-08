@@ -41,3 +41,56 @@
     }
   }
 }
+.games-like-container {
+  display: flex;
+  flex-direction: column;
+  width: 1380px;
+  background-color: #262626;
+  margin: 0 auto;
+  .title-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    h2 {
+      color: white;
+    }
+  }
+  .games-like {
+    display: flex;
+    width: 1380px;
+    overflow-x: scroll;
+
+    .games-list {
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      flex-shrink: 0;
+      // flex-wrap: nowrap;
+
+      .card-img {
+        height: 230px;
+        width: 300px;
+        object-fit: cover;
+        margin-left: 35px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+.reviews {
+  width: 1380px;
+  height: 500px;
+  background-color: #262626;
+  .title {
+    h2 {
+      color: #fff;
+    }
+  }
+  .list {
+    p {
+      color: #fff;
+    }
+  }
+}

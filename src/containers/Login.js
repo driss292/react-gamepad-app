@@ -64,7 +64,7 @@ const Login = ({ setConnected }) => {
               }}
             />
             <input
-              type="text"
+              type="password"
               placeholder="password"
               onChange={(event) => {
                 setPassword(event.target.value);

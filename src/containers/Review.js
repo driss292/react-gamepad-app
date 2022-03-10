@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Review = ({ userToken }) => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  // const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const location = useLocation();
   // console.log(location);
@@ -40,6 +40,8 @@ const Review = ({ userToken }) => {
       }
     } catch (error) {
       console.log(error.message);
+      console.log(error.response.data);
+      setErrorMessage("NOOOOOOO");
     }
   };
 
@@ -71,7 +73,9 @@ const Review = ({ userToken }) => {
         <div className="review-publish">
           <button type="submit">publish</button>
         </div>
-        <div className="review-error">{/* <p>{errorMessage}</p> */}</div>
+        <div className="review-error">
+          <p>{errorMessage}</p>
+        </div>
       </form>
     </div>
   ) : (

@@ -1,10 +1,10 @@
-import Hero from "../components/Hero/Hero";
-import CardGame from "../components/CardGame/CardGame";
+import Hero from "../../components/Hero/Hero";
+import CardGame from "../../components/CardGame/CardGame";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Paginate from "../components/Paginate/Paginate";
-import Dropdown from "../components/Dropdown/Dropdown";
-
+import Paginate from "../../components/Paginate/Paginate";
+import Dropdown from "../../components/Dropdown/Dropdown";
+import "./home.scss";
 const Home = () => {
   const [gameData, setGameData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -56,27 +56,28 @@ const Home = () => {
   return isLoading ? (
     <p>chargement...</p>
   ) : (
-    <div className="block">
-      <div className="search">
+    <div className="wrapper">
+      <div className="container-hero">
         <Hero search={search} setSearch={setSearch} gameData={gameData} />
       </div>
 
-      <div>
+      <div className="dropdown-container">
         <Dropdown
           platformsData={platformsData}
           setPlatforms={setPlatforms}
           displayPlatforms={displayPlatforms}
           setDisplayPlatforms={setDisplayPlatforms}
           platforms={platforms}
+        />
+        <Dropdown
           genresData={genresData}
           setGenres={setGenres}
           displayGenres={displayGenres}
           setDisplayGenres={setDisplayGenres}
           genres={genres}
         />
-        {/* <Dropdown/> */}
       </div>
-      <div className="container">
+      <div className="container-platform">
         <div className="title">
           <div className="block">
             {platforms ? (
@@ -84,18 +85,17 @@ const Home = () => {
             ) : (
               <h2>Most Relevance Games</h2>
             )}
-            {genres && <h2>/ {genres.name}</h2>}
+            {genres && <h2> / {genres.name}</h2>}
           </div>
         </div>
-        <div className="container-card">
-          {gameData.results.map((game, index) => {
-            return (
-              <div key={index} className="card-game">
-                <CardGame game={game} />
-              </div>
-            );
-          })}
-        </div>
+      </div>
+      {/* <div className="paginate-container">
+        <Paginate numberOfPages={numberOfPages} setPage={setPage} />
+      </div> */}
+      <div className="container-card">
+        {gameData.results.map((game, index) => {
+          return <CardGame game={game} key={index} />;
+        })}
       </div>
       <div className="paginate-container">
         <Paginate numberOfPages={numberOfPages} setPage={setPage} />

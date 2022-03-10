@@ -1,0 +1,25 @@
+.collection-title {
+  height: 200px;
+  font-size: 3.5rem;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: white;
+    &::after {
+      content: "";
+      display: block;
+      width: 75%;
+      height: 7px;
+      background-color: #ff4655;
+    }
+  }
+}
+
+.collection-container {
+  display: flex;
+  margin-left: 65px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}

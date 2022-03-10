@@ -12,33 +12,3 @@ body {
   font-family: "Exo 2", sans-serif;
   text-decoration: none;
 }
-
-.container {
-  .title {
-    max-width: 1380px;
-    background-color: #262626;
-    height: 100px;
-    margin: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 130px;
-    .block {
-      display: flex;
-      h2 {
-        display: flex;
-        color: white;
-        font-size: 2rem;
-      }
-    }
-  }
-  .container-card {
-    max-width: 1380px;
-    min-height: 100vh;
-    background-color: #262626;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}

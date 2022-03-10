@@ -3,11 +3,11 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cookies from "js-cookie";
 
-import Home from "./containers/Home";
+import Home from "./containers/HomePage/Home";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
-import Favorites from "./containers/Favorites";
-import Game from "./containers/Game";
+import Favorites from "./containers/Favorites/Favorites";
+import Game from "./containers/GamePage/Game";
 import Review from "./containers/Review";
 
 import Header from "./components/Header/Header";
@@ -18,8 +18,10 @@ import {
   faBookmark,
   faCommenting,
   faSearch,
+  faTrash,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faUser, faBookmark, faCommenting, faSearch);
+library.add(faUser, faBookmark, faCommenting, faSearch, faTrash, faCheck);
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("token") || null);

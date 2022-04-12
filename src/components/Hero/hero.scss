@@ -5,7 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1380px;
+  flex-shrink: 1;
+  flex-wrap: nowrap;
+  max-width: 1380px;
   margin: 0 auto;
   height: 305px;
   h1 {

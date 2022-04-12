@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Paginate from "../../components/Paginate/Paginate";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import "./home.scss";
+
 const Home = () => {
   const [gameData, setGameData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

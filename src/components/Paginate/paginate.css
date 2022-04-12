@@ -1,0 +1,11 @@
+.paginate-container .paginate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 400px;
+  cursor: pointer;
+  color: aliceblue;
+}
+/*# sourceMappingURL=paginate.css.map */

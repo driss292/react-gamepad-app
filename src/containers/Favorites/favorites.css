@@ -1,0 +1,39 @@
+.collection-title {
+  height: 200px;
+  font-size: 3.5rem;
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.collection-title h1 {
+  color: white;
+}
+
+.collection-title h1::after {
+  content: "";
+  display: block;
+  width: 75%;
+  height: 7px;
+  background-color: #ff4655;
+}
+
+.collection-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 65px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=favorites.css.map */

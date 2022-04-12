@@ -65,9 +65,9 @@ const CardGame = ({ game, item, elem, removeFavorite }) => {
               <div className="icon-trash">
                 <FontAwesomeIcon
                   icon="trash"
-                  // onClick={() => {
-                  //   removeFavorite(elem.gameData.slug);
-                  // }}
+                  onClick={() => {
+                    removeFavorite(elem.gameData);
+                  }}
                 />
               </div>
             </h4>

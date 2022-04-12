@@ -30,12 +30,8 @@ const Header = ({ userToken, setConnected }) => {
             <p>My Collection</p>
           </div>
           <div className="login-signup">
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-            <Link to="/signup">
-              <button>Signup</button>
-            </Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
           </div>
         </div>
       )}

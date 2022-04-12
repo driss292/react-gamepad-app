@@ -245,7 +245,7 @@ const Game = ({ userToken, userId }) => {
         </div>
       </div>
 
-      <div className="review-list">
+      {/* <div className="review-list">
         <div className="review-title">
           <p>
             Review<sup>{reviewsData.length}</sup>
@@ -258,9 +258,9 @@ const Game = ({ userToken, userId }) => {
         )}
         {reviewsData &&
           reviewsData.map((item, index) => {
-            return <Review item={item} key={index} />;
+            return <Review item={item} key={index} userToken={userToken} />;
           })}
-      </div>
+      </div> */}
     </div>
   );
 };

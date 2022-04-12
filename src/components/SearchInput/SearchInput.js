@@ -13,7 +13,7 @@ const SearchInput = ({ search, setSearch }) => {
           setSearch(event.target.value);
         }}
       />
-      <FontAwesomeIcon className="icon" icon="search" />
+      {/* <FontAwesomeIcon className="icon" icon="search" /> */}
     </div>
   );
 };

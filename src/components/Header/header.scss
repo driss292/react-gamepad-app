@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  width: 1380px;
+  max-width: 1380px;
   height: 75px;
   background-color: #262626;
   border-bottom: 2px solid #eb565b;
@@ -44,13 +44,48 @@
       }
     }
     .login-signup {
-      width: 300px;
+      max-width: 300px;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      button {
+      margin-right: 15px;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 8px;
         width: 100px;
+        height: 30px;
+        background: #eb565b;
         cursor: pointer;
+        color: white;
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .login-signup {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 15px;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          border-radius: 8px;
+          width: 80px;
+          height: 20px;
+          background: #eb565b;
+          cursor: pointer;
+          color: white;
+          // margin-right: 15px;
+          // margin-left: 15px;
+        }
       }
     }
   }

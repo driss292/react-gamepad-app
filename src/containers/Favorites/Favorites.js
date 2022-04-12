@@ -8,7 +8,7 @@ const Favorites = ({ userToken }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [reload, setReload] = useState();
-  const [favoriteData, setFavoriteData] = useState();
+  // const [favoriteData, setFavoriteData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,8 +19,8 @@ const Favorites = ({ userToken }) => {
           },
         });
 
+        // console.log(response.data);
         setData(response.data);
-        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -29,10 +29,12 @@ const Favorites = ({ userToken }) => {
     fetchData();
   }, [userToken, reload]);
 
-  const removeFavorite = async () => {
+  const removeFavorite = async (slugToRemove) => {
+    // console.log(slugToRemove);
+
     const responseRemove = await axios.post(
       "http://localhost:3000/favorite/delete",
-      { game: data },
+      { game: slugToRemove },
       {
         headers: {
           Authorization: `Bearer ${userToken}`,
@@ -42,6 +44,7 @@ const Favorites = ({ userToken }) => {
     if (responseRemove) {
       console.log("removed");
     }
+    setReload({});
   };
   return isLoading ? (
     <p>chargement...</p>

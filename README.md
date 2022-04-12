@@ -1,4 +1,4 @@
-# Vinted Clone with React
+# Gamepad-app with React
 
 <img src="https://res.cloudinary.com/dbu3ntrbw/image/upload/v1649756566/portfolio/GamePad_oydqsu.png"/>
 

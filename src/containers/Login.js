@@ -15,10 +15,13 @@ const Login = ({ setConnected }) => {
     event.preventDefault();
     if (email && password) {
       try {
-        const response = await axios.post("http://localhost:3000/user/login", {
-          email: email,
-          password: password,
-        });
+        const response = await axios.post(
+          "https://my-gamepad-backend-api.herokuapp.com/user/login",
+          {
+            email: email,
+            password: password,
+          }
+        );
 
         if (response.data.token) {
           setConnected(response.data.token, response.data.username);

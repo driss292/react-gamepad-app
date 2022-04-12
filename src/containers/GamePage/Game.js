@@ -27,14 +27,14 @@ const Game = ({ userToken, userId }) => {
         `https://api.rawg.io/api/games/${slug}/game-series?key=d1b2b07ae2794fbe8fbbd25bd05b8936`
       );
       const responseReviews = await axios.post(
-        "http://localhost:3000/reviews",
+        "https://my-gamepad-backend-api.herokuapp.com/reviews",
         {
           slug,
         }
       );
       if (userToken) {
         const responseFavorites = await axios.get(
-          "http://localhost:3000/favorites",
+          "https://my-gamepad-backend-api.herokuapp.com/favorites",
           {
             headers: {
               Authorization: `Bearer ${userToken}`,
@@ -87,7 +87,7 @@ const Game = ({ userToken, userId }) => {
     if (userToken) {
       if (!checkFavorite()) {
         const response = await axios.post(
-          "http://localhost:3000/favorite/create",
+          "https://my-gamepad-backend-api.herokuapp.com/favorite/create",
           { game: data },
           {
             headers: {
@@ -100,7 +100,7 @@ const Game = ({ userToken, userId }) => {
         }
       } else {
         const response = await axios.post(
-          "http://localhost:3000/favorite/delete",
+          "https://my-gamepad-backend-api.herokuapp.com/favorite/delete",
           { game: data },
           {
             headers: {

@@ -13,11 +13,14 @@ const Favorites = ({ userToken }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/favorites", {
-          headers: {
-            Authorization: `Bearer ${userToken}`,
-          },
-        });
+        const response = await axios.get(
+          "https://my-gamepad-backend-api.herokuapp.com/favorites",
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+          }
+        );
 
         // console.log(response.data);
         setData(response.data);

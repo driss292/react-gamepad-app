@@ -22,7 +22,7 @@ const Review = ({ userToken }) => {
     try {
       event.preventDefault();
       const response = await axios.post(
-        "http://localhost:3000/review/create",
+        "https://my-gamepad-backend-api.herokuapp.com/review/create",
         {
           text,
           title,

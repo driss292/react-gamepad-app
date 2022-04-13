@@ -1,58 +1,240 @@
-section {
-  width: 1380px;
-  height: 100vh;
-  background-color: #262626;
-  margin: 0 auto;
+.login-wrapper {
   display: flex;
+  margin: 10vh auto;
+  width: 80%;
+  align-items: center;
   justify-content: center;
-
-  .login-container {
-    background-color: #494646;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 800px;
-    height: 530px;
-    font-family: "Exo 2", sans-serif;
-
-    .left {
-      flex: 1;
-      color: aliceblue;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 100%;
-      h2 {
-        font-size: 2rem;
-        margin-left: 41px;
-      }
-
-      .info {
-        display: flex;
-        font-size: 1.5rem;
-        padding: 10px;
-        p {
-          margin-left: 10px;
-        }
-      }
-    }
-    .right {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      border-left: 2px solid #eb565b;
-      h2 {
-        color: aliceblue;
-        font-size: 2rem;
-        margin: 10px;
-        padding-left: 30px;
-        padding-top: 100px;
-      }
-    }
-  }
 }
+
+.part-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(14, 14, 14);
+  background: linear-gradient(
+    0deg,
+    rgba(14, 14, 14, 1) 0%,
+    rgba(51, 52, 54, 1) 100%
+  );
+  width: 400px;
+  height: 450px;
+  padding: 20px;
+  border-right: #ff4655 2px solid;
+  border-radius: 5px 0px 0px 5px;
+  position: relative;
+  color: #fff;
+}
+.part-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(14, 14, 14);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 14, 1) 0%,
+    rgba(51, 52, 54, 1) 100%
+  );
+  width: 400px;
+  height: 450px;
+  padding: 20px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.element-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 20px;
+}
+.icon-list {
+  margin: 5px 10px;
+}
+.little-undertext {
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+}
+.login-logo {
+  width: 5%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+.left-title {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  font-size: 150%;
+  font-weight: 300;
+  text-align: left;
+}
+.text {
+  font-size: 80%;
+  margin-left: 10px;
+  line-height: 150%;
+}
+
+.part-right input[type="email"],
+.part-right input[type="password"],
+.part-right input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.right-title {
+  margin-bottom: 10px;
+  font-size: 150%;
+  font-weight: 300;
+  color: #fff;
+}
+
+.part-right input[type="submit"] {
+  background-color: #ff4655;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.login-form {
+  width: 80%;
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.passwords-wrapper {
+  display: flex;
+}
+
+.space-passwords {
+  margin-right: 5px;
+  padding-right: 5px;
+}
+.part-right input[name="password"] {
+  margin-right: 5px;
+}
+input[type="file"] {
+  display: none;
+}
+.inputfile {
+  background-color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 50%;
+  color: #777;
+  font-size: 80%;
+}
+.icon-upload {
+  padding-left: 10px;
+}
+
+// section {
+//   // height: 100vh;
+//   // width: 100vh;
+//   max-width: 100vw;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   background-color: #262626;
+
+//   position: relative;
+
+//   .login-container {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     // max-width: 42rem;
+//     min-width: 42rem;
+//     max-height: 56rem;
+//     min-height: 28rem;
+//     margin: 0 auto;
+//     @media screen and(max-width :320px) {
+//       max-height: 80%;
+//     }
+
+//     // width: 1380px;
+//     // height: 100vh;
+//     background-color: #e93f3f;
+//     // margin: 10vh auto;
+//     // display: flex;
+//     // justify-content: center;
+
+//     // width: 100%;
+
+//     border-radius: 10px;
+//     // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+//     //   rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+//     //   rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+//     // width: 800px;
+//     // height: 530px;
+//     // font-family: "Exo 2", sans-serif;
+
+//     // .left {
+//     //   // flex: 1;
+//     //   // color: aliceblue;
+//     //   // display: flex;
+//     //   // flex-direction: column;
+//     //   // justify-content: space-evenly;
+//     //   // height: 100%;
+//     //   display: flex;
+//     //   flex-direction: column;
+//     //   justify-content: center;
+//     //   align-items: center;
+//     //   background: rgb(14, 14, 14);
+//     //   background: linear-gradient(
+//     //     0deg,
+//     //     rgba(14, 14, 14, 1) 0%,
+//     //     rgba(51, 52, 54, 1) 100%
+//     //   );
+//     //   width: 400px;
+//     //   height: 450px;
+//     //   padding: 20px;
+//     //   border-right: #ff4655 2px solid;
+//     //   border-radius: 5px 0px 0px 5px;
+//     //   position: relative;
+//     //   h2 {
+//     //     font-size: 2rem;
+//     //     margin-left: 41px;
+//     //   }
+
+//     //   .info {
+//     //     display: flex;
+//     //     font-size: 1.5rem;
+//     //     padding: 10px;
+//     //     p {
+//     //       margin-left: 10px;
+//     //     }
+//     //   }
+//     // }
+//     // .right {
+//     //   height: 100%;
+//     //   display: flex;
+//     //   flex-direction: column;
+//     //   flex: 1;
+//     //   border-left: 2px solid #eb565b;
+//     //   h2 {
+//     //     color: aliceblue;
+//     //     font-size: 2rem;
+//     //     margin: 10px;
+//     //     padding-left: 30px;
+//     //     padding-top: 100px;
+//     //   }
+//     // }
+//   }
+// }

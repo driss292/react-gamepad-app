@@ -14,14 +14,26 @@ import Header from "./components/Header/Header";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  faMagnifyingGlass,
+  faAngleRight,
+  faAngleLeft,
+  faArrowUpFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import {
   faUser,
   faBookmark,
-  faCommenting,
-  faSearch,
-  faTrash,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
-library.add(faUser, faBookmark, faCommenting, faSearch, faTrash, faCheck);
+  faMessage,
+} from "@fortawesome/free-regular-svg-icons";
+library.add(
+  faUser,
+  faBookmark,
+  faMagnifyingGlass,
+  faAngleRight,
+  faAngleLeft,
+  faArrowUpFromBracket,
+
+  faMessage
+);
 
 function App() {
   const [userToken, setUserToken] = useState(Cookies.get("token") || null);

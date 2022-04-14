@@ -56,7 +56,7 @@ const CardGame = ({ game, item, elem, removeFavorite }) => {
               }}
             />
             <div className="icon-fav">
-              <FontAwesomeIcon icon="bookmark" />
+              {/* <FontAwesomeIcon icon="bookmark" /> */}
             </div>
           </div>
           <div className="card-title">

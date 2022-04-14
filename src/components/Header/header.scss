@@ -41,6 +41,28 @@
       p {
         cursor: pointer;
         font-size: 1.4rem;
+        padding-right: 1rem;
+      }
+    }
+    .logout {
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // margin-right: 15px;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 8px;
+        width: 100px;
+        height: 30px;
+        background: #eb565b;
+        cursor: pointer;
+        color: white;
+        margin-right: 15px;
+        margin-left: 15px;
       }
     }
     .login-signup {

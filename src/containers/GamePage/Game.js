@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import CardGame from "../../components/CardGame/CardGame";
-import Review from "../../components/ReviewCpt/Review";
+// import Review from "../../components/ReviewCpt/Review";
 
 const Game = ({ userToken, userId }) => {
   const params = useParams();

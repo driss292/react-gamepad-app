@@ -1,5 +1,5 @@
 import "../SearchInput/searchInput.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchInput = ({ search, setSearch }) => {
   return (

@@ -11,22 +11,24 @@ const Header = ({ userToken, setConnected }) => {
         <h2>Gamepad</h2>
       </div>
       {userToken ? (
-        <div>
-          <button
-            onClick={() => {
-              setConnected(null);
-              navigate("/");
-            }}
-          >
-            Logout
-          </button>
+        <div className="connection-container">
+          <div className="logout">
+            <Link
+              to="/"
+              onClick={() => {
+                setConnected(null);
+              }}
+            >
+              Logout
+            </Link>
+          </div>
           <div className="collection" onClick={() => navigate("/favorites")}>
             <p>My Collection</p>
           </div>
         </div>
       ) : (
         <div className="connection-container">
-          <div className="collection" onClick={() => navigate("/favorites")}>
+          <div className="collection" onClick={() => navigate("/login")}>
             <p>My Collection</p>
           </div>
           <div className="login-signup">

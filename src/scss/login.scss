@@ -61,6 +61,7 @@
   position: absolute;
   top: 5px;
   left: 5px;
+  cursor: pointer;
 }
 .left-title {
   margin-top: 50px;
@@ -139,6 +140,11 @@ input[type="file"] {
 }
 .icon-upload {
   padding-left: 10px;
+}
+.error-msg {
+  font-size: 1.3rem;
+  padding-top: 2rem;
+  color: red;
 }
 
 // section {

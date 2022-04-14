@@ -21,8 +21,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faUser,
-  faBookmark,
   faMessage,
+  faTrashCan,
+  faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
 library.add(
   faUser,
@@ -31,6 +32,7 @@ library.add(
   faAngleRight,
   faAngleLeft,
   faArrowUpFromBracket,
+  faTrashCan,
 
   faMessage
 );

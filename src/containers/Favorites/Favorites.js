@@ -8,7 +8,7 @@ const Favorites = ({ userToken }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [reload, setReload] = useState();
-  const [favoriteData, setFavoriteData] = useState();
+  // const [favoriteData, setFavoriteData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {

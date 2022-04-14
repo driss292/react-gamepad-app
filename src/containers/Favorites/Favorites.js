@@ -8,29 +8,29 @@ const Favorites = ({ userToken }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [reload, setReload] = useState();
-  // const [favoriteData, setFavoriteData] = useState();
+  const [favoriteData, setFavoriteData] = useState();
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://my-gamepad-backend-api.herokuapp.com/favorites",
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${userToken}`,
-  //           },
-  //         }
-  //       );
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://my-gamepad-backend-api.herokuapp.com/favorites",
+          {
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+          }
+        );
 
-  //       // console.log(response.data);
-  //       setData(response.data);
-  //       setIsLoading(false);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   fetchData();
-  // }, [userToken, reload]);
+        // console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [userToken, reload]);
 
   const removeFavorite = async (slugToRemove) => {
     // console.log(slugToRemove);

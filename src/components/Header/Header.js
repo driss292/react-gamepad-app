@@ -1,8 +1,26 @@
 import "./header.scss";
 import logo from "../../assets/images/gampad-logo.png";
 import { useNavigate, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Header = ({ userToken, setConnected }) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [largeur, setLargeur] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setLargeur(window.innerWidth);
+    };
+    window.addEventListener("resize", changeWidth);
+    return () => {
+      window.removeEventListener("resize", changeWidth);
+    };
+  }, []);
+
+  const toggleNav = () => {
+    setToggleMenu(!toggleMenu);
+  };
+
   const navigate = useNavigate();
   return (
     <header className="header">
@@ -10,6 +28,7 @@ const Header = ({ userToken, setConnected }) => {
         <img src={logo} alt="" className="logo" />
         <h2>Gamepad</h2>
       </div>
+      {toggleMenu || largeur > 425}
       {userToken ? (
         <div className="connection-container">
           <div className="logout">
